@@ -1,0 +1,86 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Orders | EasyShop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+          <a href="../index.html" class="logo">EasyShop</a>
+      
+          <ul class="nav-links" id="navMenu">
+            <li class="dropdown">
+                <a href="#">Account ▾</a>
+                <ul class="dropdown-menu">
+                  <li><a href="../login-check.php">Login</a></li>
+                  <li><a href="../register.html">Register</a></li>
+                  <li><a href="../dashboard/my-orders.html">My Orders</a></li>
+                  <li><a href="../api/logout.php">Logout</a></li>
+                </ul>
+              </li>              
+      
+            <li class="dropdown">
+              <a href="#">Buyer ▾</a>
+              <ul class="dropdown-menu">
+                <li><a href="../dashboard/buyer-home.php">Dashboard</a></li>
+              </ul>
+            </li>
+      
+            <li class="dropdown">
+                <a href="#">Seller ▾</a>
+                <ul class="dropdown-menu">
+                  <li><a href="../dashboard/seller-home.html">Dashboard</a></li>
+                  <li><a href="../products/add.php">Add Product</a></li>
+                  <li><a href="../dashboard/my-listings.php">My Listings</a></li>
+                </ul>
+              </li>                          
+      
+            <li class="dropdown">
+              <a href="#">Admin ▾</a>
+              <ul class="dropdown-menu">
+                <li><a href="../admin/admin-home.php">Dashboard</a></li>
+                <li><a href="../admin/manage-users.php">Manage Users</a></li>
+                <li><a href="../admin/manage-products.php">Manage Products</a></li>
+                <li><a href="../admin/admin-reports.php">Reports</a></li>
+              </ul>
+            </li>
+      
+            <li><a href="../cart.html">Cart <span id="cart-count">0</span></a></li>
+          </ul>
+      
+          <button class="nav-toggle" id="navToggle">&#9776;</button>
+        </div>
+      </nav> 
+
+  <main class="container">
+    <h2>My Orders</h2>
+
+    <div id="orders-container">
+      <table class="orders-table">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Product</th>
+            <th>Date</th>
+            <th>Price</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="orders-body">
+          <!-- Orders will be injected here -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="../js/my-orders.js"></script>
+
+</body>
+</html>

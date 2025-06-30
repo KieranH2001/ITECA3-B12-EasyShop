@@ -1,0 +1,83 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart | EasyShop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">EasyShop</a>
+
+        <ul class="nav-links" id="navMenu">
+          <li class="dropdown">
+            <a href="#">Account ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="/login-check.php">Login</a></li>
+              <li><a href="/register.html">Register</a></li>
+              <li><a href="/dashboard/my-orders.html">My Orders</a></li>
+              <li><a href="../api/logout.php">Logout</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#">Buyer ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="../dashboard/buyer-home.php">Dashboard</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#">Seller ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="dashboard/seller-home.html">Dashboard</a></li>
+              <li><a href="products/add.php">Add Product</a></li>
+              <li><a href="../dashboard/my-listings.php">My Listings</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#">Admin ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="admin/admin-home.php">Dashboard</a></li>
+              <li><a href="admin/manage-users.php">Manage Users</a></li>
+              <li><a href="admin/manage-products.php">Manage Products</a></li>
+              <li><a href="admin/admin-reports.php">Reports</a></li>
+            </ul>
+          </li>
+
+          <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
+        </ul>
+
+        <button class="nav-toggle" id="navToggle">&#9776;</button>
+      </div>
+    </nav>      
+
+    <header class="container">
+      <h2>Your Shopping Cart</h2>
+    </header>
+
+    <main class="container">
+      <div id="cart-items"></div>
+
+      <div id="cart-summary" style="margin-top: 20px;">
+        <p><strong>Total: R<span id="cart-total">0.00</span></strong></p>
+        <div class="button-row">
+          <button onclick="clearCart()" class="btn-primary">Clear Cart</button>
+          <a href="checkout.html" class="btn-primary">Proceed to Checkout</a>
+        </div>
+      </div>      
+    </main>
+  
+  </div>
+
+  <script src="js/cart.js"></script>
+</body>
+</html>

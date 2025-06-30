@@ -1,0 +1,85 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | EasyShop</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .form-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 80px); /* Adjust for navbar height */
+      padding: 20px;
+    }
+    .form-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar copied from buyer-home.php -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">EasyShop</a>
+      <ul class="nav-links" id="navMenu">
+        <li class="dropdown">
+          <a href="#">Account ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="login-check.php">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="dashboard/my-orders.html">My Orders</a></li>
+            <li><a href="api/logout.php">Logout</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Buyer ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="dashboard/buyer-home.php">Dashboard</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Seller ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="dashboard/seller-home.html">Dashboard</a></li>
+            <li><a href="products/add.php">Add Product</a></li>
+            <li><a href="dashboard/my-listings.php">My Listings</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Admin ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="admin/admin-home.php">Dashboard</a></li>
+            <li><a href="admin/manage-users.php">Manage Users</a></li>
+            <li><a href="admin/manage-products.php">Manage Products</a></li>
+            <li><a href="admin/admin-reports.php">Reports</a></li>
+          </ul>
+        </li>
+        <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">&#9776;</button>
+    </div>
+  </nav>
+
+  <main class="form-wrapper">
+    <form class="form-card" action="api/login.php" method="POST">
+      <h2>Welcome Back</h2>
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+      <button type="submit" class="btn-primary">Login</button>
+    </form>
+  </main>
+
+</body>
+</html>
